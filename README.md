@@ -1,7 +1,8 @@
 # R-Programming-Assignment-2
 Assignment: Caching the Inverse of a Matrix
 
-# THE FUNCTION
+# THE FUNCTIONS
+## Function 1
 makeCacheMatrix <- function(x = matrix()) {
   inv <- NULL
   set <- function(y){
@@ -17,6 +18,7 @@ makeCacheMatrix <- function(x = matrix()) {
        getInverse = getInverse)
 }
 
+## Function 2
 cacheSolve <- function(x, ...) {
   inv <- x$getInverse()
   if(!is.null(inv)){
@@ -30,24 +32,35 @@ cacheSolve <- function(x, ...) {
 }
 
 # TEST THE FUNCTION
-# COMPUTING INVERSE OF A SQUARE MATRIX
-# Create z matrix
+## Create z matrix
 zmatrix <- makeCacheMatrix(matrix(1:4, nrow=2, ncol=2))
  zmatrix$get()
+ 
+## returned answer
 [,1] [,2]
 [1,]    1    3
 [2,]    2    4
+
+# Compute Inverse of a square Matrix
+
  zmatrix$getInverse()
+## returned answer
 NULL
  cacheSolve(zmatrix)
+## returned answer
 [,1] [,2]
 [1,]   -2  1.5
 [2,]    1 -0.5
+
  cacheSolve(zmatrix)
+## returned answer
 getting cached data
 [,1] [,2]
 [1,]   -2  1.5
 [2,]    1 -0.5
+
+## Try computing inverse again
+
  zmatrix$getInverse()
 [,1] [,2]
 [1,]   -2  1.5
