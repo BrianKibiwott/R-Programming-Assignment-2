@@ -1,3 +1,5 @@
+# CREATE THE FUNCTIONS
+
 makeCacheMatrix <- function(x = matrix()) {
   inv <- NULL
   set <- function(y){
@@ -29,21 +31,26 @@ cacheSolve <- function(x, ...) {
 # Create z matrix
 zmatrix <- makeCacheMatrix(matrix(1:4, nrow=2, ncol=2))
  zmatrix$get()
+# returned answer
 [,1] [,2]
 [1,]    1    3
 [2,]    2    4
  zmatrix$getInverse()
+# returned answer
 NULL
  cacheSolve(zmatrix)
+# returned answer
 [,1] [,2]
 [1,]   -2  1.5
 [2,]    1 -0.5
  cacheSolve(zmatrix)
+# returned answer
 getting cached data
 [,1] [,2]
 [1,]   -2  1.5
 [2,]    1 -0.5
  zmatrix$getInverse()
+# returned answer
 [,1] [,2]
 [1,]   -2  1.5
 [2,]    1 -0.5
